@@ -5,7 +5,6 @@ import bannerImage3 from "../../../assets/images/banner/3.jpg";
 import bannerImage4 from "../../../assets/images/banner/4.jpg";
 import bannerImage5 from "../../../assets/images/banner/5.jpg";
 import bannerImage6 from "../../../assets/images/banner/6.jpg";
-import "./Banner.css";
 import SliderItems from "./SliderItems/SliderItems";
 const Banner = () => {
   const carouselData = [
@@ -47,7 +46,7 @@ const Banner = () => {
     },
   ];
   return (
-    <div className="carousel w-full">
+    <div className="carousel w-full rounded-xl my-10">
       {carouselData.map((carousel) => (
         <SliderItems key={carousel.id} carousel={carousel}></SliderItems>
       ))}

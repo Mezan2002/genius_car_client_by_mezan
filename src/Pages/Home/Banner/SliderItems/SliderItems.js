@@ -1,9 +1,9 @@
 import React from "react";
-
+import "./SliderItems.css";
 const SliderItems = ({ carousel }) => {
   const { image, id, pre, next } = carousel;
   return (
-    <div id={`slide${id}`} className="carousel-item relative w-full">
+    <div id={`slide${id}`} className="carousel-item relative w-full h-[700px]">
       <div className="carouselImage">
         <img src={image} alt="" className="w-full" />
       </div>
