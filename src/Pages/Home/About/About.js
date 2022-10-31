@@ -4,7 +4,7 @@ import aboutUsPartsImage from "../../../assets/images/about_us/parts.jpg";
 
 const About = () => {
   return (
-    <div className="hero min-h-screen">
+    <div className="hero my-32">
       <div className="hero-content flex-col lg:flex-row">
         <div className="w-1/2 relative">
           <img
@@ -14,13 +14,13 @@ const About = () => {
           />
           <img
             src={aboutUsPartsImage}
-            className="rounded-lg shadow-2xl absolute w-3/5 border-8 right-5 top-1/2"
+            className="rounded-lg shadow-2xl absolute w-3/5 border-8 right-10 top-1/2"
             alt=""
           />
         </div>
         <div className="w-1/2">
-          <p className="text-2xl font-bold text-orange-600 mb-5">About Us</p>
-          <h1 className="text-5xl font-bold">
+          <p className="text-2xl font-bold text-orange-600">About Us</p>
+          <h1 className="my-5 text-5xl font-bold">
             We are qualified <br />
             & of experience <br />
             in this field
