@@ -17,7 +17,7 @@ const ServiceCard = ({ service }) => {
             </p>
           </div>
           <div className="">
-            <FaArrowRight className="text-2xl"></FaArrowRight>
+            <FaArrowRight className="text-2xl mr-5"></FaArrowRight>
           </div>
         </div>
       </div>
