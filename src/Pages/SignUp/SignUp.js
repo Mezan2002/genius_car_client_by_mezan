@@ -1,23 +1,33 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import loginImage from "../../assets/images/login/login.svg";
-
-const Login = () => {
-  const handleLogin = (event) => {
+import signUpImage from "../../assets/images/login/login.svg";
+const SignUp = () => {
+  const handleSignUp = (event) => {
     event.preventDefault();
   };
   return (
     <div className="hero min-h-screen">
       <div className="hero-content grid grid-cols-1 md:grid-cols-2">
         <div className="text-center">
-          <img className="w-3/4" src={loginImage} alt="" />
+          <img className="w-3/4" src={signUpImage} alt="" />
         </div>
         <form
-          onSubmit={handleLogin}
+          onSubmit={handleSignUp}
           className="card w-full shadow-2xl bg-base-100"
         >
-          <h3 className="text-2xl font-bold text-center pt-10">Login</h3>
+          <h3 className="text-2xl font-bold text-center pt-10">Sign Up</h3>
           <div className="card-body">
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Name</span>
+              </label>
+              <input
+                type="text"
+                placeholder="your name"
+                className="input input-bordered"
+                name="name"
+              />
+            </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
@@ -41,20 +51,19 @@ const Login = () => {
                 name="password"
                 required
               />
-              <label className="label">
-                <Link to="" className="label-text-alt link link-hover">
-                  Forgot password?
-                </Link>
-              </label>
             </div>
             <div className="form-control mt-6">
-              <input className="btn btn-primary" type="submit" value="Login" />
+              <input
+                className="btn btn-primary"
+                type="submit"
+                value="Sign Up"
+              />
             </div>
           </div>
           <p className="text-center pb-10">
-            New at Genius Car?
-            <Link to="/signUp" className="text-orange-600 ">
-              Create an Account
+            Already Have an Account ?{" "}
+            <Link className="text-orange-600" to="/login">
+              Login
             </Link>
           </p>
         </form>
@@ -63,4 +72,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;
