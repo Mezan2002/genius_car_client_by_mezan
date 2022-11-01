@@ -14,7 +14,7 @@ const Services = () => {
     <div className="text-center my-5">
       <p className="text-xl font-semibold text-orange-500">Service</p>
       <h2 className="text-4xl font-bold">Our Service Area</h2>
-      <p className="mt-5 mb-14 text-gray-500">
+      <p className="mt-5 mb-14 text-gray-500 capitalize">
         the majority have suffered alteration in some form, by injected humour,
         or randomised <br /> words which don't look even slightly believable.{" "}
       </p>
