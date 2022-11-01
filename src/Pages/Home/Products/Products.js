@@ -11,7 +11,7 @@ const Products = () => {
       .then((data) => setProducts(data));
   }, []);
   return (
-    <div>
+    <div className="">
       <p className="text-center text-orange-600 font-semibold">
         Popular Products
       </p>
@@ -23,10 +23,13 @@ const Products = () => {
         or randomised <br />
         words which don't look even slightly believable.
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {products.map((product) => (
           <ProductsCard key={product.id} product={product}></ProductsCard>
         ))}
+      </div>
+      <div className="text-center my-10">
+        <button className="btn btn-outline btn-error">More Products</button>
       </div>
     </div>
   );
