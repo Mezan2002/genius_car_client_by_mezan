@@ -1,72 +1,91 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import signUpImage from "../../assets/images/login/login.svg";
+import GoogleIcon from "../../assets/icons/icons8-google-48.png";
+import FacebookIcon from "../../assets/icons/icons8-facebook-48.png";
+import TwitterIcon from "../../assets/icons/icons8-twitter-48.png";
 const SignUp = () => {
-  const handleSignUp = (event) => {
+  const handleLogin = (event) => {
     event.preventDefault();
   };
+
+  const handleGoogleLogIn = () => {};
+
+  const handleFacebookLogIn = () => {};
+
+  const handleTwitterLogIn = () => {};
+
   return (
-    <div className="hero min-h-screen">
-      <div className="hero-content grid grid-cols-1 md:grid-cols-2">
-        <div className="text-center">
-          <img className="w-3/4" src={signUpImage} alt="" />
-        </div>
-        <form
-          onSubmit={handleSignUp}
-          className="card w-full shadow-2xl bg-base-100"
-        >
-          <h3 className="text-2xl font-bold text-center pt-10">Sign Up</h3>
-          <div className="card-body">
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Name</span>
-              </label>
+    <div className="flex items-center pb-20">
+      <div className="w-1/2 mx-auto">
+        <img className="w-9/12 mx-auto" src={signUpImage} alt="" />
+      </div>
+      <div className="w-1/2 mx-auto">
+        <div className=" text-center rounded-xl py-20 shadow-2xl">
+          <h2 className="text-3xl font-semibold mb-5">Create an Account</h2>
+          {/* <p className="text-red-500 mb-5">{error.slice(10, 300)}</p> */}
+          <form onSubmit={handleLogin} className="w-9/12 mx-auto">
+            <div className="inputGroup ">
               <input
+                className="border-b-2 w-full py-3 pl-2 focus:outline-none text-xl mt-7"
                 type="text"
-                placeholder="your name"
-                className="input input-bordered"
                 name="name"
+                placeholder="Your Name"
               />
             </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Email</span>
-              </label>
+            <div className="inputGroup ">
               <input
-                type="text"
-                placeholder="email"
-                className="input input-bordered"
+                className="border-b-2 w-full py-3 pl-2 focus:outline-none text-xl mt-7"
+                type="email"
                 name="email"
-                required
+                placeholder="Username or Email"
               />
             </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Password</span>
-              </label>
+            <div className="inputGroup ">
               <input
-                type="text"
-                placeholder="password"
-                className="input input-bordered"
+                className="border-b-2 w-full py-3 pl-2 focus:outline-none text-xl mt-7"
+                type="password"
                 name="password"
-                required
+                placeholder="Password"
               />
             </div>
-            <div className="form-control mt-6">
-              <input
-                className="btn btn-primary"
-                type="submit"
-                value="Sign Up"
-              />
+            <input
+              className="btn btn-primary w-full mt-10"
+              type="submit"
+              value="Sign Up"
+            />
+            <h4 className="my-10">
+              Already have an account?{" "}
+              <Link to="/login" className="underline">
+                Log In
+              </Link>
+            </h4>
+            <div className="divider  mt-5">OR SIGN IN WITH</div>
+            <div className="flex justify-center mt-5">
+              <div
+                onClick={handleGoogleLogIn}
+                className="border w-24 h-24 flex justify-center items-center flex-col mr-2 px-4 py-2 rounded-full cursor-pointer"
+              >
+                <img className="w-10 mx-auto" src={GoogleIcon} alt="" />
+                <p className="">Google</p>
+              </div>
+              <div
+                onClick={handleFacebookLogIn}
+                className="border w-24 h-24 flex justify-center items-center flex-col mr-2 px-4 py-2 rounded-full cursor-pointer"
+              >
+                <img className="w-10 mx-auto" src={FacebookIcon} alt="" />
+                <p className="">Facebook</p>
+              </div>
+              <div
+                onClick={handleTwitterLogIn}
+                className="border w-24 h-24 flex justify-center items-center flex-col mr-2 px-4 py-2 rounded-full cursor-pointer"
+              >
+                <img className="w-10 mx-auto" src={TwitterIcon} alt="" />
+                <p className="">Twitter</p>
+              </div>
             </div>
-          </div>
-          <p className="text-center pb-10">
-            Already Have an Account ?{" "}
-            <Link className="text-orange-600" to="/login">
-              Login
-            </Link>
-          </p>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
   );
