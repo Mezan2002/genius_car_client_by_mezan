@@ -4,13 +4,23 @@ import loginImage from "../../assets/images/login/login.svg";
 import GoogleIcon from "../../assets/icons/icons8-google-48.png";
 import FacebookIcon from "../../assets/icons/icons8-facebook-48.png";
 import TwitterIcon from "../../assets/icons/icons8-twitter-48.png";
+import { useContext } from "react";
+import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 
 const Login = () => {
+  const { googleLogin } = useContext(AuthContext);
   const handleLogin = (event) => {
     event.preventDefault();
   };
 
-  const handleGoogleLogIn = () => {};
+  const handleGoogleLogIn = () => {
+    googleLogin()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => console.log(error));
+  };
 
   const handleFacebookLogIn = () => {};
 
