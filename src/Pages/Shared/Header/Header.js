@@ -1,8 +1,18 @@
 import React from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/logo.svg";
+import { AuthContext } from "../../../Contexts/AuthProvider/AuthProvider";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.log(error));
+  };
+
   const menuItems = (
     <>
       <li className="font-semibold">
@@ -50,6 +60,14 @@ const Header = () => {
         <ul className="menu menu-horizontal p-0">{menuItems}</ul>
       </div>
       <div className="navbar-end">
+        {user?.uid ? (
+          <button
+            onClick={handleLogOut}
+            className="btn btn-error text-white mr-3"
+          >
+            Log Out
+          </button>
+        ) : null}
         <button className="btn btn-outline btn-error">Appointment</button>
       </div>
     </div>
