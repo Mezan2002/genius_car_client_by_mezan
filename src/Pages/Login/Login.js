@@ -8,7 +8,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 
 const Login = () => {
-  const { googleLogin } = useContext(AuthContext);
+  const { googleLogin, facebookLogin } = useContext(AuthContext);
   const handleLogin = (event) => {
     event.preventDefault();
   };
@@ -22,7 +22,14 @@ const Login = () => {
       .catch((error) => console.log(error));
   };
 
-  const handleFacebookLogIn = () => {};
+  const handleFacebookLogIn = () => {
+    facebookLogin()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => console.log(error));
+  };
 
   const handleTwitterLogIn = () => {};
 
