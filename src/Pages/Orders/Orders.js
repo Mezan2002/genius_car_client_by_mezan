@@ -17,7 +17,7 @@ const Orders = () => {
 
   const handleDelete = (id) => {
     const proceed = window.confirm(
-      "Are You Sure You Want to Delete this Order?"
+      "Are You Sure Do You Want to Cancel this Order"
     );
     if (proceed) {
       fetch(`http://localhost:5000/orders/${id}`, {
