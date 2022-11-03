@@ -46,15 +46,15 @@ const Orders = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        if (data.modifiedCount > 0) {
+        if (data.modifiedCount) {
           const remaining = orders.filter((odr) => odr._id !== id);
           const approving = orders.find((odr) => odr._id === id);
           approving.status = "Approved";
-
           const newOrders = [approving, ...remaining];
           setOrders(newOrders);
         }
+
+        console.log(data);
       });
   };
 
