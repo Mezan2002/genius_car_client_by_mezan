@@ -2,9 +2,10 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 
-const OrdersTableRow = ({ order, handleDelete }) => {
-  const { customer, phone, message, serviceName, serviceId } = order;
+const OrdersTableRow = ({ order, handleDelete, handleStatusUpdate }) => {
+  const { customer, phone, serviceName, serviceId, _id, status } = order;
   const [orderedService, setOrderedService] = useState([]);
+
   useEffect(() => {
     fetch(`http://localhost:5000/services/${serviceId}`)
       .then((res) => res.json())
@@ -15,7 +16,7 @@ const OrdersTableRow = ({ order, handleDelete }) => {
     <tr>
       <th>
         <button
-          onClick={() => handleDelete(serviceId)}
+          onClick={() => handleDelete(_id)}
           className="btn btn-circle btn-outline"
         >
           <svg
@@ -58,7 +59,12 @@ const OrdersTableRow = ({ order, handleDelete }) => {
         </span>
       </td>
       <th>
-        <button className="btn btn-ghost btn-xs">{message}</button>
+        <button
+          onClick={() => handleStatusUpdate(_id)}
+          className="btn btn-ghost btn-xs"
+        >
+          {status ? status : "pending"}
+        </button>
       </th>
     </tr>
   );
